@@ -26,8 +26,8 @@ body{background:#06090e;color:#e2e8f0;font-family:'Plus Jakarta Sans',sans-serif
 .nb.active{color:var(--a);background:rgba(var(--ar),.12);border-color:rgba(var(--ar),.3)}
 .ns::-webkit-scrollbar{display:none}.ns{scrollbar-width:none}
 ::selection{background:var(--a);color:#06090e}
-#bgv{position:fixed;top:50%;left:50%;min-width:100%;min-height:100%;z-index:-3;transform:translate(-50%,-50%) scale(1.08);object-fit:cover;opacity:.6;filter:blur(3px) saturate(1.1)}
-#shade{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 50% 30%,rgba(var(--ar),.12),transparent 70%),linear-gradient(rgba(6,9,14,.22),rgba(6,9,14,.5))}
+#bgv{position:fixed;top:50%;left:50%;min-width:100%;min-height:100%;z-index:-3;transform:translate(-50%,-50%) scale(1.02);object-fit:cover;filter:blur(3px)}
+#shade{position:fixed;inset:0;z-index:-1;pointer-events:none}
 #start{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;cursor:pointer;background:rgba(3,6,12,.5);backdrop-filter:blur(3px);transition:opacity .6s,transform .6s}
 #start.gone{opacity:0;transform:translateY(-16px);pointer-events:none}
 #start span{font-weight:600;font-size:1.4rem;animation:br 2.6s ease-in-out infinite}
@@ -49,11 +49,11 @@ body.in header,body.in main,body.in footer{opacity:1;transform:none}
   <a href="https://discord.com/users/997694757314772993" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 shrink-0">
    <img id="logo" alt="Niko" class="w-10 h-10 rounded-full object-cover border-2 border-sky-400/60 bg-slate-800" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12' fill='%2338bdf8'/%3E%3C/svg%3E">
    <div><div class="flex items-center gap-2"><span class="font-extrabold text-lg text-white">Niko</span><span class="badge">TOS & TRELLO</span></div>
-   <p class="text-xs text-slate-400">Moderator • ToS Team • Trello • Event Host</p></div>
+   <p class="text-xs text-slate-400">Moderator â€¢ ToS Team â€¢ Trello â€¢ Event Host</p></div>
   </a>
   <nav id="nav" class="flex items-center gap-1 overflow-x-auto ns text-xs font-semibold uppercase tracking-wider bg-slate-900/40 px-2 py-1.5 rounded-xl border border-slate-800/60 order-3 lg:order-none w-full lg:w-auto"></nav>
   <div class="flex items-center gap-2.5 bg-slate-900/90 p-1.5 rounded-xl border border-slate-800 relative shrink-0">
-   <div class="flex flex-col pl-1 pr-1 w-28"><span id="trk" class="text-[10px] acc font-mono font-medium truncate">Theme 1</span></div>
+  <div class="flex flex-col pl-1 pr-1 w-28"><span id="trk" class="text-[10px] acc font-mono font-medium truncate">Peak Song Right?</span></div>
    <div class="relative flex items-center pl-1 border-l border-slate-700/80">
     <button id="vbtn" aria-label="Volume" title="Volume" class="w-7 h-7 rounded-lg text-slate-400 hover:text-sky-300 hover:bg-slate-800 flex items-center justify-center transition"><i class="fas fa-volume-up text-xs"></i></button>
     <div id="vpop" class="absolute right-0 top-10 bg-slate-900/95 backdrop-blur-md border border-slate-700/80 p-2.5 rounded-xl shadow-xl z-50 flex items-center gap-2 opacity-0 scale-95 pointer-events-none transition-all duration-300 origin-top-right">
@@ -107,9 +107,9 @@ body.in header,body.in main,body.in footer{opacity:1;transform:none}
    <div class="relative flex items-center gap-4 p-5">
     <div class="relative shrink-0"><img id="d-av" alt="" class="w-16 h-16 rounded-full border-2 border-white/20 object-cover bg-slate-800"><span id="d-dot" class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-slate-500" style="box-shadow:0 0 0 2px #0a0d14"></span></div>
     <div class="min-w-0 flex-1">
-     <div class="flex items-center gap-2 flex-wrap"><span id="d-name" class="font-extrabold text-white text-lg">Loading...</span><span id="d-lab" class="text-[10px] px-2 py-0.5 rounded-full font-bold uppercase bg-slate-700 text-slate-300">—</span></div>
-     <span id="d-user" class="text-xs text-slate-300 font-mono block">@—</span>
-     <div id="d-mq" class="hidden mt-2 mq rounded-lg bg-black/30 border border-white/10 px-2 py-1"><div id="d-mt" class="mt"><span id="d-txt" class="text-xs text-slate-200 pr-10">Fetching live status…</span></div></div>
+     <div class="flex items-center gap-2 flex-wrap"><span id="d-name" class="font-extrabold text-white text-lg">Loading...</span><span id="d-lab" class="text-[10px] px-2 py-0.5 rounded-full font-bold uppercase bg-slate-700 text-slate-300">â€”</span></div>
+     <span id="d-user" class="text-xs text-slate-300 font-mono block">@â€”</span>
+     <div id="d-mq" class="hidden mt-2 mq rounded-lg bg-black/30 border border-white/10 px-2 py-1"><div id="d-mt" class="mt"><span id="d-txt" class="text-xs text-slate-200 pr-10">Fetching live statusâ€¦</span></div></div>
     </div>
    </div>
   </div>
@@ -125,7 +125,7 @@ body.in header,body.in main,body.in footer{opacity:1;transform:none}
   <div onclick="window.open('https://nenethenova.github.io/Nene-Portfolio/','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')window.open('https://nenethenova.github.io/Nene-Portfolio/','_blank','noopener,noreferrer')" class="card p-5 flex flex-col sm:flex-row items-center gap-4 cursor-pointer" style="border-color:rgba(var(--ar),.35)">
    <div class="flex items-center gap-4 flex-1 min-w-0">
     <div class="relative shrink-0"><img id="c-av" alt="Nene" class="w-14 h-14 rounded-full border-2 border-white/20 object-cover bg-slate-800"><span id="c-dot" class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-slate-500" style="box-shadow:0 0 0 2px #0a0d14"></span></div>
-    <div class="min-w-0"><div class="text-[10px] uppercase tracking-wider text-slate-400">Made by</div><div id="c-name" class="font-extrabold text-white text-lg">Nene</div><div class="text-xs text-slate-400">Bot Developer • Server Manager • Moderator</div></div>
+    <div class="min-w-0"><div class="text-[10px] uppercase tracking-wider text-slate-400">Made by</div><div id="c-name" class="font-extrabold text-white text-lg">Nene</div><div class="text-xs text-slate-400">Bot Developer â€¢ Server Manager â€¢ Moderator</div></div>
    </div>
    <div class="flex flex-wrap justify-center gap-2 text-xs font-bold">
     <a href="https://discord.com/users/813355382960553994" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="px-3 py-2 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-300"><i class="fab fa-discord mr-1.5"></i>Discord Profile</a>
@@ -139,7 +139,7 @@ body.in header,body.in main,body.in footer{opacity:1;transform:none}
 
 <footer class="border-t border-slate-800/80 glass py-6 px-4 mt-12 text-xs text-slate-500">
  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-  <div><span class="font-bold text-slate-300">Niko</span> • ToS & Trello Manager</div>
+  <div><span class="font-bold text-slate-300">Niko</span> â€¢ ToS & Trello Manager</div>
   <a href="https://discord.com/users/813355382960553994" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white">Made by <span class="acc font-bold">Nene</span></a>
  </div>
 </footer>
@@ -199,6 +199,7 @@ car.addEventListener('scroll',()=>requestAnimationFrame(focusCar));
 addEventListener('resize',()=>{if(car.children.length)measure()});
 
 const ST={online:['Online','#23a55a'],idle:['Idle','#f0b232'],dnd:['Do Not Disturb','#f23f43'],offline:['Offline','#80848e']};
+const NOSTAT="Love: miyu suzuki, miku, mafuyu, waguri, All Nakano Hate: Rent a girlfriend";
 let lastTxt='';
 function marquee(t,force){const tr=$('d-mt'),sp=$('d-txt');$('d-mq').classList.toggle('hidden',!t);lastTxt=t;if(!t)return;if(!force&&t===sp.textContent&&tr.dataset.k===t)return;lastTxt=t;sp.textContent=t;tr.dataset.k=t;
  tr.classList.remove('run');tr.querySelectorAll('.cl').forEach(e=>e.remove());
@@ -209,28 +210,33 @@ async function loadFriend(){try{const d=await lanyard(FRIEND),u=d.discord_user,a
  $('d-av').src=a;$('logo').src=a;$('fav').href=a;$('d-bg').style.backgroundImage=`url('${a}')`;
  $('d-name').textContent=u.global_name||u.username;$('d-user').textContent='@'+u.username;$('d-dot').style.background=m[1];
  const l=$('d-lab');l.textContent=m[0];l.style.cssText=`background:${m[1]}33;color:${m[1]};border:1px solid ${m[1]}88`;
- const cs=(d.activities||[]).find(x=>x.type===4);marquee(cs&&cs.state?cs.state:'')}
- catch(e){$('d-name').textContent='Status unavailable';$('d-user').textContent='';marquee('')}}
+ const cs=(d.activities||[]).find(x=>x.type===4);marquee(cs&&cs.state?cs.state:NOSTAT)}
+ catch(e){$('d-name').textContent='Status unavailable';$('d-user').textContent='';marquee(NOSTAT)}}
 async function loadNene(){try{const d=await lanyard(NENE),u=d.discord_user;$('c-av').src=av(u);$('c-name').textContent=u.global_name||u.username;$('c-dot').style.background=(ST[d.discord_status]||ST.offline)[1]}catch(e){}}
 const refresh=()=>{if(!document.hidden){loadFriend();loadNene()}};refresh();setInterval(refresh,30000);
 
-const THEMES=[['./assets/niko-bg1.mp4','./assets/niko-theme1.mp3','Theme 1'],['./assets/niko-bg2.mp4','./assets/niko-theme2.mp3','Theme 2']];
+const THEMES=[
+ ['./assets/niko-bg1.mp4','./assets/niko-theme1.mp3','Theme 1',{a:'#f9a8d4',ar:'249,168,212',s:'#f0abfc'}],
+ ['./assets/niko-bg2.mp4','./assets/niko-theme2.mp3','Theme 2',{a:'#fde047',ar:'253,224,71',s:'#fdba74'}]
+];
 let tIdx=0;
-function loadTheme(i,autoplay){tIdx=i;const t=THEMES[i];
+function loadTheme(i,autoplay){tIdx=i;const t=THEMES[i],c=t[3];
  bgv.querySelector('source').src=t[0];bgv.load();
  aud.querySelector('source').src=t[1];aud.load();
- $('trk').textContent=t[2];
+ $('trk').textContent='Peak Song Right?';
+ const r=document.documentElement.style;r.setProperty('--a',c.a);r.setProperty('--ar',c.ar);r.setProperty('--s',c.s);
  if(autoplay){bgv.play().catch(()=>{});aud.play().catch(e=>console.log('Audio play prevented by browser policy',e))}}
 function nextTheme(){loadTheme((tIdx+1)%THEMES.length,true)}
 
 const aud=$('aud'),bgv=$('bgv'),vp=$('vpop');let volOpen=false;aud.volume=$('vol').value;
+loadTheme(Math.random()<0.5?0:1,false);
 aud.addEventListener('ended',nextTheme);
 $('vol').oninput=e=>aud.volume=e.target.value;
 function vpop(o){volOpen=o;vp.classList.toggle('opacity-0',!o);vp.classList.toggle('scale-95',!o);vp.classList.toggle('pointer-events-none',!o);vp.classList.toggle('opacity-100',o);vp.classList.toggle('scale-100',o)}
 $('vbtn').onclick=e=>{e.stopPropagation();vpop(!volOpen)};
 addEventListener('click',e=>{if(volOpen&&!vp.contains(e.target))vpop(false)});
 
-const start=()=>{$('start').classList.add('gone');setTimeout(()=>$('start').style.display='none',650);document.body.classList.add('in');loadTheme(0,true)};
+const start=()=>{$('start').classList.add('gone');setTimeout(()=>$('start').style.display='none',650);document.body.classList.add('in');bgv.play().catch(()=>{});aud.play().catch(e=>console.log('Audio play prevented by browser policy',e))};
 $('start').addEventListener('click',start,{once:true});
 $('start').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')start()},{once:true});
 </script>
